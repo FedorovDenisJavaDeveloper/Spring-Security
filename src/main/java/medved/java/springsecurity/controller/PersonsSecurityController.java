@@ -17,33 +17,6 @@ public class PersonsSecurityController {
     public PersonsSecurityController(PersonsRepository repository) {
         this.repository = repository;
     }
-//
-//    @GetMapping("/first")
-//    public String firstEndpoint() {
-//        return "Only for first!";
-//    }
-//
-//    @GetMapping("/third")
-//    public String thirdEndpoint() {
-//        return "For first & second. Third!";
-//    }
-//
-//    @GetMapping("/all")
-//    public String forAllEndpoint() {
-//        return "For all users without authorization!";
-//    }
-//
-//    @GetMapping("/second")
-//    public String secondEndpoint() {
-//        return "Only for second!";
-//    }
-//
-//    @GetMapping("/fourth")
-//    public String fourthEndpoint() {
-//        return "For all authorized users! Fourth!";
-//    }
-//
-//
 
     @GetMapping("/by-city")
     public List<Persons> getPersonsByCity(@RequestParam("city_of_living") String city) {

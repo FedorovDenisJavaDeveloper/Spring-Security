@@ -12,13 +12,16 @@ public class PersonsConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.formLogin().and()
+        http
                 .authorizeRequests().antMatchers("/persons/by-city").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/persons/by-age","/persons/by-fio").hasAuthority("first_auth")
                 .and()
                 .authorizeRequests().antMatchers("/persons/baseperson/by-age").hasAuthority("second_auth")
                 .and()
+                .httpBasic()
+                .and()
+                .csrf().disable()
                 .authorizeRequests().anyRequest().authenticated();
         return http.build();
     }
