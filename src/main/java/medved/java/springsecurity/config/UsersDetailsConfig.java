@@ -17,7 +17,6 @@ public class UsersDetailsConfig {
                 User.withUsername("first")
                         .password(encoder.encode("first"))
                         .authorities("first_auth")
-                        .roles("READ")
                         .build()
         );
         manager.createUser(
